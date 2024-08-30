@@ -16,7 +16,7 @@ const Welcome = ({ title }: WelcomeOwnProps) => {
           <PageHeaderTitle title={title} />
         </PageHeader>
       )}
-      <PageSection>
+      <PageSection hasBodyWrapper={false}>
         <WelcomeState />
       </PageSection>
     </>

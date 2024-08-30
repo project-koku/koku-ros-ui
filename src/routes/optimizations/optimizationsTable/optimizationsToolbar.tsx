@@ -1,4 +1,4 @@
-import type { ToolbarChipGroup } from '@patternfly/react-core';
+import type { ToolbarLabelGroup } from '@patternfly/react-core';
 import type { RosQuery } from 'api/queries/rosQuery';
 import messages from 'locales/messages';
 import React from 'react';
@@ -20,7 +20,7 @@ interface OptimizationsToolbarOwnProps {
 }
 
 interface OptimizationsToolbarState {
-  categoryOptions?: ToolbarChipGroup[];
+  categoryOptions?: ToolbarLabelGroup[];
 }
 
 type OptimizationsToolbarProps = OptimizationsToolbarOwnProps & WrappedComponentProps;
@@ -35,7 +35,7 @@ class OptimizationsToolbarBase extends React.Component<OptimizationsToolbarProps
     });
   }
 
-  private getCategoryOptions = (): ToolbarChipGroup[] => {
+  private getCategoryOptions = (): ToolbarLabelGroup[] => {
     const { hideCluster, hideProject, intl } = this.props;
 
     const options = [

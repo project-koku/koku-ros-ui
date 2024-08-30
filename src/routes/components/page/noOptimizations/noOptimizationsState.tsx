@@ -1,10 +1,4 @@
-import {
-  EmptyState,
-  EmptyStateBody,
-  EmptyStateHeader,
-  EmptyStateIcon,
-  EmptyStateVariant,
-} from '@patternfly/react-core';
+import { EmptyState, EmptyStateBody, EmptyStateVariant } from '@patternfly/react-core';
 import messages from 'locales/messages';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';
@@ -22,12 +16,13 @@ class NoOptimizationsStateBase extends React.Component<NoOptimizationsStateProps
     const { intl } = this.props;
 
     return (
-      <EmptyState variant={EmptyStateVariant.lg} className="pf-m-redhat-font">
-        <EmptyStateHeader
-          titleText={intl.formatMessage(messages.noOptimizationsTitle)}
-          icon={<EmptyStateIcon icon={OptimizationIcon as any} />}
-          headingLevel="h1"
-        />
+      <EmptyState
+        headingLevel="h1"
+        icon={OptimizationIcon as any}
+        titleText={intl.formatMessage(messages.noOptimizationsTitle)}
+        variant={EmptyStateVariant.lg}
+        className="pf-m-redhat-font"
+      >
         <EmptyStateBody>{intl.formatMessage(messages.noOptimizationsDesc)}</EmptyStateBody>
       </EmptyState>
     );

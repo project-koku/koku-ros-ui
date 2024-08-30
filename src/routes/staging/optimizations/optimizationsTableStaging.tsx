@@ -34,7 +34,7 @@ const OptimizationsDetailsStaging: React.FC<OptimizationsDetailsStagingProps> = 
   const projectFilter = 'openshift';
 
   return (
-    <PageSection isFilled>
+    <PageSection>
       <OptimizationsTable
         breadcrumbLabel={
           intl.formatMessage(messages.breakdownBackToOptimizationsProject, { value: groupByValue }) as string

@@ -1,4 +1,4 @@
-import { notificationsReducer } from '@redhat-cloud-services/frontend-components-notifications/redux';
+import { notificationsReducer } from '@ausuliv/frontend-components-notifications/redux';
 import { combineReducers } from 'redux';
 import { accountSettingsReducer, accountSettingsStateKey } from 'store/accountSettings';
 import { forecastReducer, forecastStateKey } from 'store/forecasts';

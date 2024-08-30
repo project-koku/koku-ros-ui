@@ -1,11 +1,4 @@
-import {
-  ClipboardCopy,
-  EmptyState,
-  EmptyStateBody,
-  EmptyStateHeader,
-  EmptyStateIcon,
-  EmptyStateVariant,
-} from '@patternfly/react-core';
+import { ClipboardCopy, EmptyState, EmptyStateBody, EmptyStateVariant } from '@patternfly/react-core';
 import messages from 'locales/messages';
 import React from 'react';
 import { useIntl } from 'react-intl';
@@ -47,12 +40,13 @@ const NotConfiguredState: React.FC<NotConfiguredStateProps> = () => {
   };
 
   return (
-    <EmptyState variant={EmptyStateVariant.lg} className="pf-m-redhat-font">
-      <EmptyStateHeader
-        titleText={intl.formatMessage(messages.notConfiguredTitle)}
-        icon={<EmptyStateIcon icon={OptimizationIcon as any} />}
-        headingLevel="h1"
-      />
+    <EmptyState
+      headingLevel="h1"
+      icon={OptimizationIcon as any}
+      titleText={intl.formatMessage(messages.notConfiguredTitle)}
+      variant={EmptyStateVariant.lg}
+      className="pf-m-redhat-font"
+    >
       <EmptyStateBody>{intl.formatMessage(messages.notConfiguredDesc)}</EmptyStateBody>
       <EmptyStateBody>
         {intl.formatMessage(messages.notConfiguredNamespace, { clipboard: getNamespaceClipboard() })}

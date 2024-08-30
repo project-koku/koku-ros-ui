@@ -1,13 +1,4 @@
-import {
-  Icon,
-  TextContent,
-  TextList,
-  TextListItem,
-  TextListItemVariants,
-  TextListVariants,
-  Title,
-  TitleSizes,
-} from '@patternfly/react-core';
+import { Content, ContentVariants, Icon, Title, TitleSizes } from '@patternfly/react-core';
 import { ExclamationTriangleIcon } from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import type { RecommendationReportData } from 'api/ros/recommendations';
 import messages from 'locales/messages';
@@ -70,42 +61,42 @@ const OptimizationsBreakdownHeader: React.FC<OptimizationsBreakdownHeaderProps> 
     const workloadType = report?.workload_type ? report.workload_type : '';
 
     return (
-      <TextContent>
-        <TextList component={TextListVariants.dl}>
-          <TextListItem component={TextListItemVariants.dt}>
+      <Content>
+        <Content component={ContentVariants.dl}>
+          <Content component={ContentVariants.dt}>
             {intl.formatMessage(messages.optimizationsValues, { value: 'last_reported' })}
-          </TextListItem>
-          <TextListItem component={TextListItemVariants.dd}>{lastReported}</TextListItem>
-          <TextListItem component={TextListItemVariants.dt}>
+          </Content>
+          <Content component={ContentVariants.dd}>{lastReported}</Content>
+          <Content component={ContentVariants.dt}>
             {intl.formatMessage(messages.optimizationsValues, { value: 'cluster' })}
-          </TextListItem>
-          <TextListItem component={TextListItemVariants.dd}>{cluster}</TextListItem>
-          <TextListItem component={TextListItemVariants.dt}>
+          </Content>
+          <Content component={ContentVariants.dd}>{cluster}</Content>
+          <Content component={ContentVariants.dt}>
             {intl.formatMessage(messages.optimizationsValues, { value: 'project' })}
-          </TextListItem>
-          <TextListItem component={TextListItemVariants.dd}>
+          </Content>
+          <Content component={ContentVariants.dd}>
             <OptimizationsBreakdownProjectLink
               breadcrumbLabel={intl.formatMessage(messages.breakdownBackToOptimizationsProject, { value: project })}
               isOptimizationsDetails={isOptimizationsDetails}
               linkPath={projectPath}
               project={project}
             />
-          </TextListItem>
-          <TextListItem component={TextListItemVariants.dt}>
+          </Content>
+          <Content component={ContentVariants.dt}>
             {intl.formatMessage(messages.optimizationsValues, { value: 'workload_type' })}
-          </TextListItem>
-          <TextListItem component={TextListItemVariants.dd}>{workloadType}</TextListItem>
-          <TextListItem component={TextListItemVariants.dt}>
+          </Content>
+          <Content component={ContentVariants.dd}>{workloadType}</Content>
+          <Content component={ContentVariants.dt}>
             {intl.formatMessage(messages.optimizationsValues, { value: 'workload' })}
-          </TextListItem>
-          <TextListItem component={TextListItemVariants.dd}>{workload}</TextListItem>
-        </TextList>
-      </TextContent>
+          </Content>
+          <Content component={ContentVariants.dd}>{workload}</Content>
+        </Content>
+      </Content>
     );
   };
 
   return (
-    <header style={styles.header}>
+    <header>
       {getBackToLink()}
       <div style={styles.title}>
         <Title headingLevel="h1" size={TitleSizes['2xl']}>

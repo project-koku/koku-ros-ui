@@ -1,8 +1,8 @@
-import global_FontSize_md from '@patternfly/react-tokens/dist/js/global_FontSize_md';
+import t_global_font_size_md from '@patternfly/react-tokens/dist/js/t_global_font_size_md';
 import type React from 'react';
 
 export const styles = {
   infoIcon: {
-    fontSize: global_FontSize_md.value,
+    fontSize: t_global_font_size_md.value,
   },
 } as { [className: string]: React.CSSProperties };

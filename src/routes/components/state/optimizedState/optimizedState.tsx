@@ -1,18 +1,10 @@
-import {
-  EmptyState,
-  EmptyStateBody,
-  EmptyStateHeader,
-  EmptyStateIcon,
-  EmptyStateVariant,
-} from '@patternfly/react-core';
+import { EmptyState, EmptyStateBody, EmptyStateVariant } from '@patternfly/react-core';
 import { CheckCircleIcon } from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import { intl as defaultIntl } from 'components/i18n';
 import messages from 'locales/messages';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';
 import { injectIntl } from 'react-intl';
-
-import { styles } from './optimizedState.styles';
 
 interface LoadingStateProps extends WrappedComponentProps {
   body?: string;
@@ -28,12 +20,14 @@ const LoadingStateBase: React.FC<LoadingStateProps> = ({
   heading = intl.formatMessage(messages.optimizedStateTitle),
 }) => {
   return (
-    <EmptyState variant={EmptyStateVariant.lg} className="pf-m-redhat-font" isFullHeight>
-      <EmptyStateHeader
-        headingLevel="h5"
-        icon={<EmptyStateIcon style={styles.icon} icon={CheckCircleIcon} />}
-        titleText={heading}
-      />
+    <EmptyState
+      headingLevel="h5"
+      icon={CheckCircleIcon}
+      titleText={heading}
+      variant={EmptyStateVariant.lg}
+      className="pf-m-redhat-font"
+      isFullHeight
+    >
       <EmptyStateBody>{body}</EmptyStateBody>
     </EmptyState>
   );

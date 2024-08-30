@@ -11,9 +11,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import type { AnyAction } from 'redux';
 import type { ThunkDispatch } from 'redux-thunk';
-import { Loading } from 'routes/components/page/loading';
 import { NotAvailable } from 'routes/components/page/notAvailable';
 import { NotConfigured } from 'routes/components/page/notConfigured';
+import { LoadingState } from 'routes/components/state/loadingState';
 import { styles } from 'routes/optimizations/optimizationsBreakdown/optimizationsBreakdown.styles';
 import { getOrderById, getOrderByValue } from 'routes/utils/orderBy';
 import * as queryUtils from 'routes/utils/query';
@@ -198,14 +198,14 @@ const OptimizationsTable: React.FC<OptimizationsTableProps> = ({
     <>
       {getToolbar()}
       {reportFetchStatus === FetchStatus.inProgress ? (
-        <Loading
+        <LoadingState
           body={intl.formatMessage(messages.optimizationsLoadingStateDesc)}
           heading={intl.formatMessage(messages.optimizationsLoadingStateTitle)}
         />
       ) : (
         <>
           {getTable()}
-          <div style={styles.pagination}>{getPagination(isDisabled, true)}</div>
+          <div style={styles.paginationContainer}>{getPagination(isDisabled, true)}</div>
         </>
       )}
     </>

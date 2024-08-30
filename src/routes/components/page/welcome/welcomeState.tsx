@@ -1,10 +1,4 @@
-import {
-  EmptyState,
-  EmptyStateBody,
-  EmptyStateHeader,
-  EmptyStateIcon,
-  EmptyStateVariant,
-} from '@patternfly/react-core';
+import { EmptyState, EmptyStateBody, EmptyStateVariant } from '@patternfly/react-core';
 import { PlusCircleIcon } from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import messages from 'locales/messages';
 import React from 'react';
@@ -18,12 +12,13 @@ class WelcomeStateBase extends React.Component<WelcomeStateBaseOwnProps, any> {
     const { intl } = this.props;
 
     return (
-      <EmptyState variant={EmptyStateVariant.lg} className="pf-m-redhat-font">
-        <EmptyStateHeader
-          titleText={intl.formatMessage(messages.welcomeTitle)}
-          icon={<EmptyStateIcon icon={PlusCircleIcon} />}
-          headingLevel="h5"
-        />
+      <EmptyState
+        headingLevel="h5"
+        icon={PlusCircleIcon}
+        titleText={intl.formatMessage(messages.welcomeTitle)}
+        variant={EmptyStateVariant.lg}
+        className="pf-m-redhat-font"
+      >
         <EmptyStateBody>
           {intl.formatMessage(messages.welcomeInfo, {
             url: (

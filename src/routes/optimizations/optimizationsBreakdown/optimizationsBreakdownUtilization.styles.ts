@@ -1,5 +1,5 @@
-import global_spacer_md from '@patternfly/react-tokens/dist/js/global_spacer_md';
-import global_spacer_sm from '@patternfly/react-tokens/dist/js/global_spacer_sm';
+import t_global_spacer_md from '@patternfly/react-tokens/dist/js/t_global_spacer_md';
+import t_global_spacer_sm from '@patternfly/react-tokens/dist/js/t_global_spacer_sm';
 
 export const chartStyles = {
   chartHeight: 350,
@@ -13,8 +13,8 @@ export const styles = {
     display: 'flex',
   },
   dividerContainer: {
-    marginRight: `-${global_spacer_sm.value}`,
-    paddingBottom: global_spacer_md.value,
-    paddingTop: global_spacer_md.value,
+    marginRight: `-${t_global_spacer_sm.value}`,
+    paddingBottom: t_global_spacer_md.value,
+    paddingTop: t_global_spacer_md.value,
   },
 } as { [className: string]: React.CSSProperties };
