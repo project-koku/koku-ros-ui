@@ -125,38 +125,40 @@ const OptimizationsBreakdownUtilization: React.FC<OptimizationsBreakdownUtilizat
   };
 
   return (
-    <Grid hasGutter>
-      <GridItem xl={6}>
-        <div style={styles.container}>
-          <div style={styles.cardContainer}>
-            <Card isPlain>
-              <CardTitle>
-                <Title headingLevel="h2" size={TitleSizes.lg}>
-                  {intl.formatMessage(messages.cpuUtilization)}
-                </Title>
-              </CardTitle>
-              <CardBody>{getChart(UsageType.cpuUsage, RecommendationType.cpu)}</CardBody>
-            </Card>
+    <Card>
+      <Grid hasGutter>
+        <GridItem xl={6}>
+          <div style={styles.container}>
+            <div style={styles.cardContainer}>
+              <Card isPlain>
+                <CardTitle>
+                  <Title headingLevel="h2" size={TitleSizes.lg}>
+                    {intl.formatMessage(messages.cpuUtilization)}
+                  </Title>
+                </CardTitle>
+                <CardBody>{getChart(UsageType.cpuUsage, RecommendationType.cpu)}</CardBody>
+              </Card>
+            </div>
+            <Divider
+              orientation={{
+                default: 'vertical',
+              }}
+              style={styles.dividerContainer}
+            />
           </div>
-          <Divider
-            orientation={{
-              default: 'vertical',
-            }}
-            style={styles.dividerContainer}
-          />
-        </div>
-      </GridItem>
-      <GridItem xl={6}>
-        <Card isPlain>
-          <CardTitle>
-            <Title headingLevel="h2" size={TitleSizes.lg}>
-              {intl.formatMessage(messages.memoryUtilization)}
-            </Title>
-          </CardTitle>
-          <CardBody>{getChart(UsageType.memoryUsage, RecommendationType.memory)}</CardBody>
-        </Card>
-      </GridItem>
-    </Grid>
+        </GridItem>
+        <GridItem xl={6}>
+          <Card isPlain>
+            <CardTitle>
+              <Title headingLevel="h2" size={TitleSizes.lg}>
+                {intl.formatMessage(messages.memoryUtilization)}
+              </Title>
+            </CardTitle>
+            <CardBody>{getChart(UsageType.memoryUsage, RecommendationType.memory)}</CardBody>
+          </Card>
+        </GridItem>
+      </Grid>
+    </Card>
   );
 };
 

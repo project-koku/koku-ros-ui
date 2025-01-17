@@ -14,7 +14,6 @@ import { isEqual } from 'routes/utils/equal';
 import type { Filter } from 'routes/utils/filter';
 import { createMapStateToProps } from 'store/common';
 
-import { styles } from './dataToolbar.styles';
 import {
   getCategoryInput,
   getCategorySelect,
@@ -278,7 +277,7 @@ export class BasicToolbarBase extends React.Component<BasicToolbarProps, BasicTo
 
     // Todo: clearAllFilters workaround https://github.com/patternfly/patternfly-react/issues/4222
     return (
-      <div style={style ? style : styles.toolbarContainer}>
+      <div style={style}>
         <Toolbar
           className="toolbarOverride"
           clearAllFilters={this.handleOnDelete as any}
@@ -295,7 +294,7 @@ export class BasicToolbarBase extends React.Component<BasicToolbarProps, BasicTo
               </ToolbarToggleGroup>
             )}{' '}
             {actions && <ToolbarGroup>{actions}</ToolbarGroup>}
-            <ToolbarItem align={{ default: 'alignRight' }} variant="pagination">
+            <ToolbarItem align={{ default: 'alignEnd' }} variant="pagination">
               {pagination}
             </ToolbarItem>
           </ToolbarContent>

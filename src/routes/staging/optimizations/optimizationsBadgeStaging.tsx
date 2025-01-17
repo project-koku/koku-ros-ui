@@ -14,7 +14,7 @@ const OptimizationsBadgeStaging: React.FC<OptimizationsBadgeStagingProps> = () =
   const projectFilter = 'openshift';
 
   return (
-    <PageSection isFilled>
+    <PageSection>
       <OptimizationsBadge cluster={clusterFilter} project={projectFilter} />
     </PageSection>
   );

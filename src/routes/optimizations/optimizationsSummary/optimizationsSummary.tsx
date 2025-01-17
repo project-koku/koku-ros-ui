@@ -81,11 +81,10 @@ const OptimizationsSummary: React.FC<OptimizationsSummaryProps> = ({
               }
             >
               <Button
+                icon={<OutlinedQuestionCircleIcon />}
                 aria-label={intl.formatMessage(messages.optimizationsInfoButtonArialLabel)}
                 variant={ButtonVariant.plain}
-              >
-                <OutlinedQuestionCircleIcon />
-              </Button>
+              />
             </Popover>
           </span>
         </Title>

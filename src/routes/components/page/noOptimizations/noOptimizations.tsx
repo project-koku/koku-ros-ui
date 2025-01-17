@@ -18,7 +18,7 @@ const NoOptimizations = ({ title }: NoOptimizationsProps) => {
           <PageHeaderTitle title={title} />
         </PageHeader>
       )}
-      <PageSection>
+      <PageSection hasBodyWrapper={false}>
         <NoOptimizationsState />
       </PageSection>
     </>

@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import type { AnyAction } from 'redux';
 import type { ThunkDispatch } from 'redux-thunk';
-import { Loading } from 'routes/components/page/loading';
+import { LoadingState } from 'routes/components/state/loadingState';
 import type { RootState } from 'store';
 import { FetchStatus } from 'store/common';
 import { rosActions, rosSelectors } from 'store/ros';
@@ -241,22 +241,24 @@ const OptimizationsBreakdown: React.FC<OptimizationsBreakdownProps> = () => {
   const [availableTabs] = useState(getAvailableTabs());
 
   return (
-    <div style={styles.container}>
-      <OptimizationsBreakdownHeader
-        breadcrumbLabel={breadcrumbLabel}
-        breadcrumbPath={breadcrumbPath}
-        currentInterval={currentInterval}
-        isDisabled={isLoading}
-        isOptimizationsDetails={isOptimizationsDetails}
-        onSelect={handleOnSelect}
-        optimizationType={getOptimizationType()}
-        projectPath={projectPath}
-        report={report}
-      />
-      <div style={styles.tabs}>{getTabs(availableTabs)}</div>
-      <PageSection isFilled>
+    <>
+      <PageSection style={styles.headerContainer}>
+        <OptimizationsBreakdownHeader
+          breadcrumbLabel={breadcrumbLabel}
+          breadcrumbPath={breadcrumbPath}
+          currentInterval={currentInterval}
+          isDisabled={isLoading}
+          isOptimizationsDetails={isOptimizationsDetails}
+          onSelect={handleOnSelect}
+          optimizationType={getOptimizationType()}
+          projectPath={projectPath}
+          report={report}
+        />
+      </PageSection>
+      <PageSection>{getTabs(availableTabs)}</PageSection>
+      <PageSection>
         {isLoading ? (
-          <Loading
+          <LoadingState
             body={intl.formatMessage(messages.optimizationsLoadingStateDesc)}
             heading={intl.formatMessage(messages.optimizationsLoadingStateTitle)}
           />
@@ -267,8 +269,7 @@ const OptimizationsBreakdown: React.FC<OptimizationsBreakdownProps> = () => {
           </div>
         )}
       </PageSection>
-      .
-    </div>
+    </>
   );
 };
 

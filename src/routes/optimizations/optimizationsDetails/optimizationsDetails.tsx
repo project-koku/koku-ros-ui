@@ -1,8 +1,7 @@
-import { PageSection } from '@patternfly/react-core';
+import { Card, CardBody, PageSection } from '@patternfly/react-core';
 import React from 'react';
 import { OptimizationsTable } from 'routes/optimizations/optimizationsTable';
 
-import { styles } from './optimizationsDetails.styles';
 import { OptimizationsDetailsHeader } from './optimizationsDetailsHeader';
 
 interface OptimizationsDetailsOwnProps {
@@ -23,19 +22,25 @@ const OptimizationsDetails: React.FC<OptimizationsDetailsProps> = ({
   projectPath,
 }) => {
   return (
-    <div style={styles.container}>
-      <OptimizationsDetailsHeader />
-      <PageSection isFilled>
-        <OptimizationsTable
-          breadcrumbLabel={breadcrumbLabel}
-          breadcrumbPath={breadcrumbPath}
-          isOptimizationsDetails
-          linkPath={linkPath}
-          linkState={linkState}
-          projectPath={projectPath}
-        />
+    <>
+      <PageSection>
+        <OptimizationsDetailsHeader />
       </PageSection>
-    </div>
+      <PageSection>
+        <Card>
+          <CardBody>
+            <OptimizationsTable
+              breadcrumbLabel={breadcrumbLabel}
+              breadcrumbPath={breadcrumbPath}
+              isOptimizationsDetails
+              linkPath={linkPath}
+              linkState={linkState}
+              projectPath={projectPath}
+            />
+          </CardBody>
+        </Card>
+      </PageSection>
+    </>
   );
 };
 

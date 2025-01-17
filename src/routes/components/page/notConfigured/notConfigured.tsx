@@ -18,7 +18,7 @@ const NotConfigured = ({ title }: NotConfiguredProps) => {
           <PageHeaderTitle title={title} />
         </PageHeader>
       )}
-      <PageSection>
+      <PageSection hasBodyWrapper={false}>
         <NotConfiguredState />
       </PageSection>
     </>
